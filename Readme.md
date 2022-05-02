@@ -1,18 +1,13 @@
-EvolveGCN
+Exploration of Attention Layers with Evolving Graph Convolutional Networks for Dynamic Graphs for Detection of Fraudulent Activity in Bitcoin
 =====
 
-This repository contains the code for [EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs](https://arxiv.org/abs/1902.10191), published in AAAI 2020.
+This repository contains the code for my final capstone project. The orginal EvolveGCN model originates from [1]. 
 
 ## Data
 
-7 datasets were used in the paper:
+2 datasets were used in the paper:
 
 - stochastic block model: See the 'data' folder. Untar the file for use.
-- bitcoin OTC: Downloadable from http://snap.stanford.edu/data/soc-sign-bitcoin-otc.html
-- bitcoin Alpha: Downloadable from http://snap.stanford.edu/data/soc-sign-bitcoin-alpha.html
-- uc_irvine: Downloadable from http://konect.uni-koblenz.de/networks/opsahl-ucsocial
-- autonomous systems: Downloadable from http://snap.stanford.edu/data/as-733.html
-- reddit hyperlink network: Downloadable from http://snap.stanford.edu/data/soc-RedditHyperlinks.html
 - elliptic: A preprocessed version of https://www.kaggle.com/ellipticco/elliptic-data-set is provided in the following link: ~~https://ibm.box.com/s/j04m8lwoqktjixke2gj7lgllrvvdidme.~~ Untar the file in the 'data' folder for use.
 
 Update on elliptic: The box link is no longer valid. Please see the [instruction](elliptic_construction.md) to manually prepare the preprocessed version.
@@ -22,35 +17,6 @@ For downloaded data sets please place them in the 'data' folder.
 ## Requirements
   * PyTorch 1.0 or higher
   * Python 3.6
-
-## Set up with Docker
-
-This docker file describes a container that allows you to run the experiments on any Unix-based machine. GPU availability is recommended to train the models. Otherwise, set the use_cuda flag in parameters.yaml to false.
-
-### Requirements
-
-- [install docker](https://docs.docker.com/install/)
-- [install nvidia drivers](https://www.nvidia.com/Download/index.aspx?lang=en-us)
-
-### Installation
-
-#### 1. Build the image
-
-From this folder you can create the image
-
-```sh
-sudo docker build -t gcn_env:latest docker-set-up/
-```
-
-#### 2. Start the container
-
-Start the container
-
-```sh
-sudo docker run -ti  --gpus all -v $(pwd):/evolveGCN  gcn_env:latest
-```
-
-This will start a bash session in the container.
 
 ## Usage
 
