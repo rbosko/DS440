@@ -8,7 +8,8 @@ sbm50_args:
 
 
 use_cuda: True
-use_logfile: False # If True save the output in a log file, if False in stdout
+use_logfile: True
+# If True save the output in a log file, if False in stdout
 
 model: egcn_o #HELP: gcn
            #      gruA
@@ -59,8 +60,12 @@ gcn_parameters:
   layer_1_feats_max: 200
   layer_2_feats: 100
   layer_2_feats_same_as_l1: True
+  layer_3_feats: 100
+  layer_3_feats_same_as_l2: True
+  layer_4_feats: 100
+  layer_4_feats_same_as_l3: Tru
   k_top_grcu: 200
-  num_layers: 2
+  num_layers: 3
   lstm_l1_layers: 1
   lstm_l1_feats: 100 # only used with sp_lstm_B_trainer
   lstm_l1_feats_min: 10
@@ -68,6 +73,12 @@ gcn_parameters:
   lstm_l2_layers: 1 # only used with both sp_lstm_A_trainer and sp_lstm_B_trainer
   lstm_l2_feats: None # only used with both sp_lstm_A_trainer and sp_lstm_B_trainer
   lstm_l2_feats_same_as_l1: True
+  lstm_l3_layers: 1 # only used with both sp_lstm_A_trainer and sp_lstm_B_trainer
+  lstm_l3_feats: None # only used with both sp_lstm_A_trainer and sp_lstm_B_trainer
+  lstm_l3_feats_same_as_l2: True
+  lstm_l4_layers: 1 # only used with both sp_lstm_A_trainer and sp_lstm_B_trainer
+  lstm_l4_feats: None # only used with both sp_lstm_A_trainer and sp_lstm_B_trainer
+  lstm_l4_feats_same_as_l3: True
   cls_feats: 100 # Hidden size of the classifier
   cls_feats_min: 100
   cls_feats_max: 800

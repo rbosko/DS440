@@ -1,4 +1,4 @@
-import utils as u
+import utils_l3 as u
 import torch
 from torch.nn.parameter import Parameter
 import torch.nn as nn
@@ -12,7 +12,9 @@ class EGCN(torch.nn.Module):
 
         feats = [args.feats_per_node,
                  args.layer_1_feats,
-                 args.layer_2_feats]
+                 args.layer_2_feats,
+                 args.layer_3_feats,
+                 args.layer_4_feats]
         self.device = device
         self.skipfeats = skipfeats
         self.GRCU_layers = []

@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 import os
 from pylab import *
 import pprint
+from sklearn.metrics import confusion_matrix
+from sklearn import metrics
+from prettytable import PrettyTable
+from tabulate import tabulate
 
 ##### Parameters ######
 filename = sys.argv[-1] # log filename
@@ -322,3 +326,9 @@ str_legend+='log_file'
 print ('\n\nCSV-like output:')
 print (str_legend)
 print (str_results)
+
+
+
+
+    
+
